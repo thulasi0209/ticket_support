@@ -2,6 +2,8 @@
 
 Vite + React frontend for the AI Support Ticket Classification System.
 
+Live demo: https://ticket-support-6brx.vercel.app?_vercel_share=RImonRwkf028EAVnrUkfeMogXa2xa4Cu
+
 Quick start:
 
 ```bash
