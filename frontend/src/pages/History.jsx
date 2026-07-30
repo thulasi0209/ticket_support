@@ -40,10 +40,10 @@ export default function History() {
                       {r.predicted_category}
                     </span>
                   </td>
-                  <td className="px-4 py-3 font-semibold">{(r.confidence_score || 0).toFixed?.(2)}%</td>
+                  <td className="px-4 py-3 font-semibold">{(Number(r.confidence || 0) * 100).toFixed(2)}%</td>
                   <td className="px-4 py-3 capitalize">{r.priority}</td>
                   <td className="px-4 py-3 capitalize">{r.review_status}</td>
-                  <td className="px-4 py-3 text-slate-400">{r.timestamp}</td>
+                  <td className="px-4 py-3 text-slate-400">{r.created_at}</td>
                 </tr>
               ))}
             </tbody>

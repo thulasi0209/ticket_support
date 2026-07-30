@@ -17,7 +17,7 @@ function confidenceColor(score) {
 export default function PredictionCard({ result }) {
   if (!result) return null
   const priorityClass = priorityStyles[String(result.priority).toLowerCase()] || 'bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300'
-  const score = Number(result.confidence_score)
+  const score = Number(result.confidence) * 100
 
   return (
     <motion.div
