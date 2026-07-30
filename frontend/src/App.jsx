@@ -19,12 +19,16 @@ export default function App() {
     <ThemeProvider>
       <CssBaseline />
       <ToastProvider />
-      <div className="flex h-screen bg-gradient-to-br from-slate-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <div className="relative flex h-screen bg-gradient-to-br from-slate-50 via-primary-50/40 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-900">
+        <div className="bg-blobs">
+          <div className="bg-blob w-96 h-96 bg-primary-300 dark:bg-primary-800 -top-24 -left-24" />
+          <div className="bg-blob w-96 h-96 bg-accent-light dark:bg-emerald-800 top-1/2 -right-24" style={{ animationDelay: '2s' }} />
+        </div>
         <Sidebar />
         <div className="flex-1 flex flex-col overflow-hidden">
           <Topbar />
           <main className="p-6 overflow-auto">
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div className="flex items-center justify-center h-40 text-slate-400 animate-pulse">Loading…</div>}>
               <Routes>
                 <Route path="/" element={<Navigate to="/dashboard" replace />} />
                 <Route path="/dashboard" element={<Dashboard />} />
